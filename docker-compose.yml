@@ -1,0 +1,22 @@
+services:
+  postgres:
+    image: postgres:15
+    container_name: backend
+    restart: always
+    environment:
+      POSTGRES_DB: backend
+      POSTGRES_USER: backend
+      POSTGRES_PASSWORD: u08/A2oHCi6}
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    networks:
+      - backend_network
+
+volumes:
+  pgdata:
+
+networks:
+  backend_network:
+    driver: bridge
